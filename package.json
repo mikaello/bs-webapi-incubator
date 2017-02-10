@@ -10,8 +10,14 @@
   "author": "chenglou",
   "license": "MIT",
   "devDependencies": {
-    "bs-platform": "https://github.com/bloomberg/bucklescript.git",
-    "reason": "https://github.com/facebook/reason.git"
+    "bs-platform": "esy-ocaml/bucklescript.git#esy",
+    "reason": "facebook/reason.git#esy",
+    "ninja-build-system": "reasonml/ninja.git#v1.7.2-esy"
+  },
+  "peerDependencies": {
+    "bs-platform": "esy-ocaml/bucklescript.git#esy",
+    "reason": "facebook/reason.git#esy",
+    "ninja-build-system": "reasonml/ninja.git#v1.7.2-esy"
   },
   "rebel": {}
 }
