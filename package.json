@@ -10,14 +10,13 @@
   "author": "chenglou",
   "license": "MIT",
   "devDependencies": {
-    "bs-platform": "esy-ocaml/bucklescript.git#esy",
-    "reason": "facebook/reason.git#esy",
-    "ninja-build-system": "reasonml/ninja.git#v1.7.2-esy"
+    "bs-platform": "esy-ocaml/bucklescript#esy",
+    "reason": "facebook/reason#esy",
+    "@opam-alpha/utop": "*"
   },
   "peerDependencies": {
-    "bs-platform": "esy-ocaml/bucklescript.git#esy",
-    "reason": "facebook/reason.git#esy",
-    "ninja-build-system": "reasonml/ninja.git#v1.7.2-esy"
+    "bs-platform": "esy-ocaml/bucklescript#esy",
+    "reason": "facebook/reason#esy"
   },
   "rebel": {}
 }
