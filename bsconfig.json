@@ -4,6 +4,7 @@
   an issue! */
 {
   "name" : "reason-js",
+  "bsc-flags": ["-w", "-40", "-I", "$bs_platform__install/lib/ocaml"],
   "sources": [
     "src",
     {
