@@ -46,10 +46,28 @@ module Impl = (T: {type t;}) => {
   [@bs.send.pipe : T.t] external lookupPrefix : string = "lookupPrefix";
   [@bs.send.pipe : T.t] external normalize : unit = "";
   [@bs.send.pipe : T.t] external removeChild : Dom.node_like('a) => Dom.node_like('a) = "";
-  /* replacChild */
+  /* replaceChild */
 };
 
 type t = Dom.node;
 
 include Webapi__Dom__EventTarget.Impl({ type nonrec t = t; });
 include Impl({ type nonrec t = t; });
+
+let convertNodeToRealType: t => Webapi__Dom__Types.nodeTypeContent =
+  node =>
+    switch (nodeType(node)) {
+    | Element => `Element(Obj.magic(node))
+    | Attribute => `Attribute(Obj.magic(node))
+    | Text => `Text(Obj.magic(node))
+    | CDATASection => `CDATASection(Obj.magic(node))
+    | EntityReference => `EntityReference
+    | Entity => `Entity
+    | ProcessingInstruction => `ProcessingInstruction(Obj.magic(node))
+    | Comment => `Comment(Obj.magic(node))
+    | Document => `Document(Obj.magic(node))
+    | DocumentType => `DocumentType(Obj.magic(node))
+    | DocumentFragment => `DocumentFragment(Obj.magic(node))
+    | Notation => `Notation
+    | Unknown => `Unknown
+    };

@@ -174,6 +174,22 @@ let encodeModifierKey =
   | Symbol => "Symbol"
   | SymbolLock => "SymbolLock";
 
+type nodeTypeContent = [
+  | `Element(Dom.element)
+  | `Attribute(Dom.attr)
+  | `Text(Dom.text)
+  | `CDATASection(Dom.cdataSection)
+  | `EntityReference
+  | `Entity
+  | `ProcessingInstruction(Dom.processingInstruction)
+  | `Comment(Dom.comment)
+  | `Document(Dom.document)
+  | `DocumentType(Dom.documentType)
+  | `DocumentFragment(Dom.documentFragment)
+  | `Notation
+  | `Unknown
+];
+
 type nodeType =
   | Element
   | Attribute /* deprecated */
@@ -212,7 +228,7 @@ type pointerType =
   | Unknown;
 
 let decodePointerType =
-  fun /* itnernal */
+  fun /* internal */
   | "mouse" => Mouse
   | "pen" => Pen
   | "touch|" => Touch
